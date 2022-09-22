@@ -1,5 +1,8 @@
 {
     "files.associations": {
-        "app.h": "c"
+        "app.h": "c",
+        "timer.h": "c",
+        "dio.h": "c",
+        "led_timer.h": "c"
     }
 }
