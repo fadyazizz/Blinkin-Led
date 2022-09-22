@@ -21,8 +21,8 @@ void app_timer(){
     
 }
 
-void timer_config(void (*ptr)(), int onTimeConfig,int offTimeConfig){
+void timer_config(int onTimeConfig,int offTimeConfig){
     onTime=onTimeConfig;
     offTime=offTimeConfig;
-    init_timer(ptr,onTime);
+    init_timer(app_timer,onTime);
 } 
