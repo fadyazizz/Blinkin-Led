@@ -14,25 +14,31 @@
 
 // addresses of gpio_den
 #define GPIO_DEN_OFFSET 0x51C
-# define GPIO_PORTA_DEN (*(( volatile unsigned long *)GPIO_PORTA+GPIO_DEN_OFFSET))
-# define GPIO_PORTB_DEN (*(( volatile unsigned long *)GPIO_PORTB+GPIO_DEN_OFFSET))
-# define GPIO_PORTC_DEN (*(( volatile unsigned long *)GPIO_PORTC+GPIO_DEN_OFFSET))
-# define GPIO_PORTD_DEN (*(( volatile unsigned long *)GPIO_PORTD+GPIO_DEN_OFFSET))
-# define GPIO_PORTE_DEN (*(( volatile unsigned long *)GPIO_PORTE+GPIO_DEN_OFFSET))
-# define GPIO_PORTF_DEN (*(( volatile unsigned long *)GPIO_PORTF+GPIO_DEN_OFFSET))
+# define GPIO_PORTA_DEN (*(( volatile unsigned long *)(GPIO_PORTA+GPIO_DEN_OFFSET)))
+# define GPIO_PORTB_DEN (*(( volatile unsigned long *)(GPIO_PORTB+GPIO_DEN_OFFSET)))
+# define GPIO_PORTC_DEN (*(( volatile unsigned long *)(GPIO_PORTC+GPIO_DEN_OFFSET)))
+# define GPIO_PORTD_DEN (*(( volatile unsigned long *)(GPIO_PORTD+GPIO_DEN_OFFSET)))
+# define GPIO_PORTE_DEN (*(( volatile unsigned long *)(GPIO_PORTE+GPIO_DEN_OFFSET)))
+# define GPIO_PORTF_DEN (*(( volatile unsigned long *)(GPIO_PORTF+GPIO_DEN_OFFSET)))
 
 //addresses of DIR
 #define GPIO_DIR_OFFSET 0x400
-# define GPIO_PORTA_DIR (*(( volatile unsigned long *)GPIO_PORTA+GPIO_DIR_OFFSET))
-# define GPIO_PORTB_DIR (*(( volatile unsigned long *)GPIO_PORTB+GPIO_DIR_OFFSET))
-# define GPIO_PORTC_DIR (*(( volatile unsigned long *)GPIO_PORTC+GPIO_DIR_OFFSET))
-# define GPIO_PORTD_DIR (*(( volatile unsigned long *)GPIO_PORTD+GPIO_DIR_OFFSET))
-# define GPIO_PORTE_DIR (*(( volatile unsigned long *)GPIO_PORTE+GPIO_DIR_OFFSET))
-# define GPIO_PORTF_DIR (*(( volatile unsigned long *)GPIO_PORTF+GPIO_DIR_OFFSET))
+# define GPIO_PORTA_DIR (*(( volatile unsigned long *)(GPIO_PORTA+GPIO_DIR_OFFSET)))
+# define GPIO_PORTB_DIR (*(( volatile unsigned long *)(GPIO_PORTB+GPIO_DIR_OFFSET)))
+# define GPIO_PORTC_DIR (*(( volatile unsigned long *)(GPIO_PORTC+GPIO_DIR_OFFSET)))
+# define GPIO_PORTD_DIR (*(( volatile unsigned long *)(GPIO_PORTD+GPIO_DIR_OFFSET)))
+# define GPIO_PORTE_DIR (*(( volatile unsigned long *)(GPIO_PORTE+GPIO_DIR_OFFSET)))
+# define GPIO_PORTF_DIR (*(( volatile unsigned long *)(GPIO_PORTF+GPIO_DIR_OFFSET)))
 
 
 //addresses of Data
-# define GPIO_PORTF_DATA_R (*(( volatile unsigned long *)0x40025038)) 
+#define GPIO_DATA_OFFSET 0x3FC
+# define GPIO_PORTA_DATA_R (*(( volatile unsigned long *)(GPIO_PORTA+GPIO_DATA_OFFSET))) 
+# define GPIO_PORTB_DATA_R (*(( volatile unsigned long *)(GPIO_PORTB+GPIO_DATA_OFFSET))) 
+# define GPIO_PORTC_DATA_R (*(( volatile unsigned long *)(GPIO_PORTC+GPIO_DATA_OFFSET))) 
+# define GPIO_PORTD_DATA_R (*(( volatile unsigned long *)(GPIO_PORTD+GPIO_DATA_OFFSET))) 
+# define GPIO_PORTE_DATA_R (*(( volatile unsigned long *)(GPIO_PORTE+GPIO_DATA_OFFSET))) 
+# define GPIO_PORTF_DATA_R (*(( volatile unsigned long *)(GPIO_PORTF+GPIO_DATA_OFFSET))) 
 
 //ports names
 #define PORT_A 'A'

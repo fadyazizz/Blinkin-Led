@@ -18,6 +18,7 @@ void enable_port(char port){
         case PORT_E:
         SYSCTL_RCGCGPIO_R|=0x10;
         break;
+        case PORT_F:
         SYSCTL_RCGCGPIO_R|=0x20;
         break;
     }
@@ -26,27 +27,28 @@ void enable_port(char port){
 void enable_pins(char port,int pin,int direction){
     switch(port){
         case PORT_A:
-        GPIOA->DEN|=pin;
-        GPIOA->DIR|=direction;
+        GPIO_PORTA_DEN|=pin;
+        GPIO_PORTA_DIR|=direction;
         break;
         case PORT_B:
-        GPIOB->DIR|=direction;
-        GPIOB->DIR|=direction;
+        GPIO_PORTB_DEN|=pin;
+        GPIO_PORTB_DIR|=direction;
         break;
         case PORT_C:
-        GPIOC->DEN|=pin;
-        GPIOC->DIR|=direction;
+        GPIO_PORTC_DEN|=pin;
+        GPIO_PORTC_DIR|=direction;
         break;
         case PORT_D:
-        GPIOD->DEN|=pin;
-        GPIOD->DIR|=direction;
+        GPIO_PORTD_DEN|=pin;
+        GPIO_PORTD_DIR|=direction;
         break;
         case PORT_E:
-        GPIOE->DEN|=pin;
-        GPIOE->DIR|=direction;
+        GPIO_PORTE_DEN|=pin;
+        GPIO_PORTE_DIR|=direction;
         break;
-        GPIOF->DEN|=pin;
-        GPIOF->DIR|=direction;
+        case PORT_F:
+        GPIO_PORTF_DEN|=pin;
+        GPIO_PORTF_DIR|=direction;
         break;
     }
 }
@@ -58,21 +60,22 @@ void toggle_pin(char port, int pin){
 
      switch(port){
         case PORT_A:
-        GPIOA->DATA^=pin;
+        GPIO_PORTA_DATA_R^=pin;
         break;
         case PORT_B:
-        GPIOB->DATA^=pin;
+        GPIO_PORTB_DATA_R^=pin;
         break;
         case PORT_C:
-        GPIOC->DATA^=pin;
+        GPIO_PORTC_DATA_R^=pin;
         break;
         case PORT_D:
-        GPIOD->DATA^=pin;;
+        GPIO_PORTD_DATA_R^=pin;;
         break;
         case PORT_E:
-        GPIOE->DATA^=pin;
+        GPIO_PORTE_DATA_R^=pin;
         break;
-        GPIOF->DATA^=pin;
+        case PORT_F:
+        GPIO_PORTF_DATA_R^=pin;
         break;
     }
 

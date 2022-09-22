@@ -8,7 +8,7 @@ int onTime;
 int offTime;
 
 void app_timer(){
-    toggle_pin(PORT_A,PIN_1);
+    toggle_pin(PORT_B,PIN_1);
     
     if(on==1){
         on=0;
